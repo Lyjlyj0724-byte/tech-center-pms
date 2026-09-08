@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # lint 在前：风格/静态错误最便宜，先 fail fast
+      - name: Lint
+        run: npm run lint
+
+      # 测试在后：只跑单元测试，重型联调脚本（需起服务）不进 CI
+      - name: Unit tests
+        run: npm test
