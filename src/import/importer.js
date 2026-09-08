@@ -4,7 +4,7 @@
  * 全部通过才返回可写入存储的规范化数据。
  */
 import XLSX from 'xlsx';
-import { parseImportWorkbook, parseImportFile } from './parseImportFile.js';
+import { parseImportWorkbook } from './parseImportFile.js';
 import { validateImport, toDateStr, parsePrevCodes } from './validateImport.js';
 
 const str = (v) => (v == null ? '' : String(v).trim());
