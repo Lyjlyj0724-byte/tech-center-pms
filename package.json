@@ -1,0 +1,17 @@
+{
+  "name": "tech-center-pms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "技术中心内部项目管理系统",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
